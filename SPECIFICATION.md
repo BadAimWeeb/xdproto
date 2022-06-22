@@ -1,6 +1,6 @@
 # XDProto Public Specification
 
-Version: draft-00 / Last modified: 17/06/2022
+Version: draft-01 / Last modified: 22/06/2022
 
 ## 1. Overview
 
@@ -69,9 +69,13 @@ Implementation MUST support this transport.
 
 The packet is encoded and transmitted as raw binary (Uint8Array in JS).
 
-### 4.3. IPFS
+### 4.3. IPFS/libp2p
 
-TBD
+This transportation is used when the server is behind firewall/NAT or you want your application to easily connect to the server without knowing where the server is.
+
+Implementation MUST support this transport.
+
+The automatic server discovery feature is implemented using PubSub as event name `xdproto_discovery`, and the packet is transmitted over libp2p with protocol `xdproto/1.0`.
 
 ## 5. Packet format
 
